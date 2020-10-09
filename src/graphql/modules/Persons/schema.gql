@@ -1,0 +1,43 @@
+type Person {
+  _id: ID!
+  firstName: String!
+  lastName: String!
+  fullName: String!
+  cpf: String!
+  email: String!
+  address: String!
+  password: String!
+}
+
+type AuthData {
+  personId: ID!
+  token:String!
+  tokenExpiration: Int!
+}
+
+input PersonInput {
+  firstName: String!
+  lastName: String!
+  cpf: String!
+  email: String!
+  address: String!
+  password: String!
+  count: Int
+}
+
+type Query {
+  persons: [Person!]!
+  person(id: ID!): Person!
+  
+}
+
+type Mutation {
+  createPerson(data: PersonInput!): Person!
+  updatePerson(id: ID, data: PersonInput!): Person!
+  deletePerson(id: ID!): Boolean
+  login(email: String!, password: String!): AuthData!
+}
+
+type Subcription {
+  userAdded: Person!
+}

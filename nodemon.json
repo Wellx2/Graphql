@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER":"well",
+    "MONGO_PASSWORD":"ws891501",
+    "MONGO_DB":"CrudBackendChallange"
+  }
+}

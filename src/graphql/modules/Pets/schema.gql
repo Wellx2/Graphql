@@ -1,0 +1,27 @@
+type Pet {
+  _id: ID!
+  petName: String!
+  breed: String!
+  color: String!
+  size: String!
+  owner: Person!
+}
+
+input PetInput {
+  petName: String!
+  breed: String!
+  color: String!
+  size: String!
+  owner: ID!
+}
+
+type Query {
+  pets: [Pet!]!
+  pet(id: ID!): Pet!
+}
+
+type Mutation {
+  createPet(data: PetInput!): Pet!
+  updatePet(id: ID, data: PetInput!): Pet!
+  deletePet(id: ID!): Boolean
+}
